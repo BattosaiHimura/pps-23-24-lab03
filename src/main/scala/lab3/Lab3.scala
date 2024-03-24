@@ -15,3 +15,7 @@ object Lab3:
     def zip[A, B](first: Sequence[A], second: Sequence[B]): Sequence[(A, B)] = (first, second) match
       case (Cons(h1, t1), Cons(h2, t2)) => Cons((h1, h2), zip(t1, t2))
       case _ => Nil()
+
+    def concat[A](l1: Sequence[A], l2: Sequence[A]): Sequence[A] = (l1, l2) match
+      case (Cons(h, t), _) => Cons(h, concat(t, l2))
+      case (_, l2) => l2
