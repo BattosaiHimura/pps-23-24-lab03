@@ -46,5 +46,6 @@ class SequenceTest:
 
   @Test def testMin() =
     assertEquals(Just(10), min(l))
+    assertEquals(Just(10), min(Cons(50, l)))
     assertEquals(Just(1), min(Cons(1, Nil())))
     assertEquals(Empty(), min(Nil()))
